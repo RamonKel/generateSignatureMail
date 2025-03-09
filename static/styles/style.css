@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #232946;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.397);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    background-color: #ffd903a4;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 250px;
+    height: auto;
+    width: auto;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+.form-container {
+    flex: 1;
+    padding: 40px;
+    width: 100%;
+    background-color: #fffffe;
+}
+
+h1, h2 {
+    color: #120a8f; /* Azul principal da GMF */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:hover {
+    box-shadow: 0px 0px 8px #333;
+    transform: scale(1.0);
+    transition: .2s;
+}
+
+select:hover {
+    box-shadow: 0px 0px 8px #333;
+    transform: scale(1.0);
+    transition: .2s;
+}
+
+.example {
+    display: block;
+    margin-bottom: 20px;
+    color: red;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adicione uma margem superior para espaçamento */
+}
+
+button {
+    background-color: #120a8f; /* Azul principal da GMF */
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    box-shadow: 0px 0px 8px #120a8f;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+#result {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#signature-image {
+    max-width: 100%;
+    margin-top: 20px;
+    display: none; /* Esconder a imagem inicialmente */
+}
+
+#signature-image[src] {
+    display: block; /* Mostrar a imagem se o src estiver definido */
+}
+
+#download-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #120a8f; /* Azul principal da GMF */
+    text-decoration: none;
+    border: 1px solid #120a8f;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#download-link:hover {
+    background-color: #120a8f;
+    color: #fff;
+    box-shadow: 0px 0px 8px #003399;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1020px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .image-container {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 20px;
+    }
+
+    .form-container {
+        padding-top: 20px;
+        max-width: 95%;
+    }
+
+    .container {
+        padding: 60px;
+    }
+
+    .content {
+        padding: 5px;
+    }
+
+    .image-container {
+        background-color: #fff;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    button {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        max-width: 95%;
+    }
+
+    #result {
+        max-width: 98%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 60px;
+    }
+
+    .content {
+        padding: 5px;
+    }
+
+    .image-container {
+        background-color: #fff;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    button {
+        margin-right: 50px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        max-width: 90%;
+    }
+
+    #result {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 25px;
+        margin-bottom: 50px;
+        margin-right: 20px;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        margin-right: 300px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        background-color: #33333318;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+        margin-left: 30px;
+    }
+
+    .example {
+        font-size: 12px;
+    }
+
+    .form-container {
+        margin-right: 20px;
+    }
+
+}

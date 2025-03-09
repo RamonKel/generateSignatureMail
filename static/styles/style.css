@@ -38,6 +38,8 @@ body {
     background-color: #ffd903a4;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
 }
 
 .image-container img {
@@ -45,6 +47,7 @@ body {
     max-height: 250px;
     height: auto;
     width: auto;
+    margin: 15px;
 }
 
 .image-container img:hover {
@@ -167,6 +170,12 @@ button:hover {
         border-right: none;
         border-bottom: 1px solid #e0e0e0;
         padding-bottom: 20px;
+        flex-direction: row;
+    }
+
+    .image-container img {
+        max-width: 200px;
+        max-height: 200px;
     }
 
     .form-container {

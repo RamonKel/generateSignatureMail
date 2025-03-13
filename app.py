@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_file('index.html')
+    return send_file('templates/index.html')
 
 @app.route('/generate-signature', methods=['POST'])
 def generate_signature():

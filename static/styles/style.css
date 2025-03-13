@@ -35,7 +35,7 @@ body {
     align-items: center;
     padding: 20px;
     border-right: 1px solid #e0e0e0;
-    background-color: #ffd903a4;
+    background-color: #f25b24f1;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
     flex-direction: column-reverse;
@@ -83,6 +83,7 @@ select {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #33333318;
 }
 
 input:hover {
@@ -95,6 +96,14 @@ select:hover {
     box-shadow: 0px 0px 8px #333;
     transform: scale(1.0);
     transition: .2s;
+}
+
+.required {
+    display: inline;
+    margin-bottom: 20px;
+    color: red;
+    font-size: 14px;
+    font-style: italic;
 }
 
 .example {
@@ -158,6 +167,15 @@ button:hover {
     box-shadow: 0px 0px 8px #003399;
     transform: scale(1.05);
     transition: .2s;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 60px 4%;
+    box-shadow: 0px 0px 40px 10px #a7a9be1e;
+    background-color: #232946ea;
+    color: #000000;
 }
 
 /* Media Queries */
@@ -250,6 +268,11 @@ button:hover {
 }
 
 @media screen and (max-width: 480px) {
+    .image-container img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+
     h1 {
         font-size: 25px;
         margin-bottom: 50px;
@@ -262,6 +285,7 @@ button:hover {
 
     img {
         max-width: 100%;
+        max-height: 100%;
     }
 
     label {

@@ -16,8 +16,11 @@ def generate_signature():
     role = request.form['role'].upper()
     assignment = request.form['assignment'].upper()
     department = request.form['department'].upper()
-    email = request.form['email'].lower()
+    email = request.form['email'].upper()
     phone = request.form['phone']
+    phone_secondary = request.form['phone-secondary']
+    bar = '/'
+    line = '-'
 
     name_parts = full_name.split()
     if len(name_parts) > 1:
@@ -33,29 +36,42 @@ def generate_signature():
         draw = ImageDraw.Draw(image)
 
         # Carregar as fontes e tamanhos
-        font_path = os.path.join('static', 'fonts', 'AtkinsonHyperlegibleNext-SemiBold.ttf')
-        fontName = ImageFont.truetype(font_path, 21)
-        fontRole = ImageFont.truetype(font_path, 21)
-        fontDepartament = ImageFont.truetype(font_path, 13)
-        fontMail = ImageFont.truetype(font_path, 15)
+        font_path = os.path.join('static', 'fonts', 'Aribau Grotesk Medium.otf')
+        font_path2 = os.path.join('static', 'fonts', 'Aribau Grotesk Bold.otf')
+
+        fontName = ImageFont.truetype(font_path2, 21)
+        fontRole = ImageFont.truetype(font_path2, 21)
+        fontAssignment = ImageFont.truetype(font_path, 14)
+        fontDepartament = ImageFont.truetype(font_path, 16)
+        fontMail = ImageFont.truetype(font_path, 12)
         fontPhone = ImageFont.truetype(font_path, 14)
-        fontAssignment = ImageFont.truetype(font_path, 16)
+        fontPhoneSeconday = ImageFont.truetype(font_path, 14)
 
         # Inserir os dados na imagem
+
         if role == 'GD':
             draw.text((57, 30), name, font=fontName, fill="white")
         elif role == 'SUB':
-            draw.text((73, 30), name, font=fontName, fill="white")
+            draw.text((71, 30), name, font=fontName, fill="white")
         elif role == 'INSP':
-            draw.text((83, 30), name, font=fontName, fill="white")
+            draw.text((80, 30), name, font=fontName, fill="white")
         elif role == 'ESTG':
-            draw.text((84, 30), name, font=fontName, fill="white")
+            draw.text((80, 30), name, font=fontName, fill="white")
+        elif role == '':
+            draw.text((21, 30), name, font=fontName, fill="white")
+            draw.text((11, 30), role, font=fontName, fill="white")
         
         draw.text((21, 30), role, font=fontRole, fill="white")
-        draw.text((21, 74), department, font=fontDepartament, fill="white")
-        draw.text((21, 96), email, font=fontMail, fill="white")
+        draw.text((21, 97), email, font=fontMail, fill="white")
+
+        assignment_text = f"{assignment} - {department}"
+        draw.text((21, 55), assignment_text, font=fontAssignment, fill="white")
+
         draw.text((21, 115), phone, font=fontPhone, fill="white")
-        draw.text((21, 55), assignment, font=fontAssignment, fill="white")
+        
+        if phone_secondary != '':
+            draw.text((145, 115), phone_secondary, font=fontPhoneSeconday, fill="white")
+            draw.text((136, 115), bar, font=fontPhoneSeconday, fill="white")
 
         # Salvar a imagem em um buffer de bytes
         img_bytes = io.BytesIO()

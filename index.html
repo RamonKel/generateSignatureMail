@@ -15,26 +15,39 @@
     <div class="container">
         <div class="content">
             <div class="image-container">
-                <img src="static/img/guarda_municipal.png" alt="Imagem Predefinida" draggable="false">
-                <img src="static/img/PMF_VERT_COR.ico" alt="Imagem Predefinida" draggable="false">
+                <img src="static/img/logo gmf.png" alt="Logo Guarda Municipal de Fortaleza" draggable="false">
+                <img src="static/img/SEGURANÇA CIDADA.png" alt="Logo Prefeitura de Fortaleza" draggable="false">
             </div>
             <div class="form-container">
-                <h1>Assinatura Digital - Guarda Municipal de Fortaleza</h1>
+                <h1>Assinatura de Email - Guarda Municipal de Fortaleza</h1>
                 <form id="signature-form" action="/generate-signature" method="POST">
-                    <label for="name">Nome completo:</label>
-                    <input type="text" id="name" name="full_name" required>
-                    
+
                     <label for="role">Cargo:</label>
                     <select id="role" name="role" required>
                         <option value="GD">Guarda</option>
-                        <option value="SUB">Subinspetor</option>
-                        <option value="INSP">Inspetor</option>
+                        <option value="SUB">Subinspetor(a)</option>
+                        <option value="INSP">Inspetor(a)</option>
                         <option value="ESTG">Estagiário (Bolsista)</option>
+                        <option value="">Comissionado</option> <!-- Sumir CARGOS -->
+                        <option value="">Tercerizado</option> <!-- Sumir CARGOS -->
                     </select>
 
+                    <label for="name">Nome funcional:</label>
+                    <input type="text" id="name" name="full_name" required maxlength="20">
+                    <span class="example">Insira nome funcional (nome de guerra)</span>
+                    
                     <label for="assignment">Atribuição:</label>
-                    <input type="text" id="assignment" name="assignment" required>
-                    <span class="example">Exemplos: Gerente/Administrativo/Técnico</span>
+                    <select id="assignment" name="assignment" required>
+                        <option value="Diretor a Geral">Diretor(a) Geral</option>
+                        <option value="Diretor(a) adjuto(a)">Diretor(a) adjuto(a)</option>
+                        <option value="Coordenador(a)">Coordenador(a)</option>
+                        <option value="Chefe de Núcleo">Chefe de Núcleo</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Comandante de Inspetoria">Comandante de Inspetoria</option>
+                        <option value="Administrativo">Administrativo</option>
+                        <option value="Técnico">Técnico</option>
+                        <option value="Técnico-Administrativo">Técnico-Administrativo</option>
+                    </select>
                     
                     <label for="department">Setor:</label>
                     <select id="department" name="department" required>
@@ -51,26 +64,33 @@
                         <option value="Iterm/GMF">Iterm/GMF</option>
                         <option value="Compras/GMF">Compras/GMF</option>
                         <option value="Copcom/GMF">Copcom/GMF</option>
+                        <option value="Coafi/GMF">Coafi/GMF</option>
                         <option value="Gemp/GMF">Gemp/GMF</option>
                         <option value="Gtam/GMF">Gtam/GMF</option>
                         <option value="Iciclo/GMF">Iciclo/GMF</option>
                         <option value="Direção Adjunta/GMF">Direção-Adjunta/GMF</option>
                         <option value="Direção Geral/GMF">Direção-Geral/GMF</option>
                         <option value="Nuplan/GMF">Nuplan/GMF</option>
-                        <option value="Goe/GMF">GOE/GMF</option>
-                        <option value="ISU/GMF">ISU/GMF</option>
+                        <option value="Goe/GMF">Goe/GMF</option>
+                        <option value="ISU/GMF">Isu/GMF</option>
+                        <option value="ISE/GMF">Ise/GMF</option>
+                        <option value="ISA/GMF">Isa/GMF</option>
                         <option value="Nucoint/GMF">Nucoint/GMF</option>
                         <option value="Patrimônio/GMF">Patrimônio/GMF</option>
+                        <option value="Logistica/GMF">Logistica/GMF</option>
                         <option value="Protocolo/GMF">Protocolo/GMF</option>
                         <option value="Transporte/GMF">Transporte/GMF</option>
                     </select>
                     
                     <label for="email">E-mail Institucional:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" value="@gmf.fortaleza.ce.gov.br" required>
                     <span class="example">Confira se seu e-mail institucional está corrreto!</span>
                     
-                    <label for="phone">Número de Telefone:</label>
+                    <label for="phone">Número principal:<span class="required"> *</span></label>
                     <input type="tel" id="phone" name="phone" required>
+
+                    <label for="phone-secondary">Número secudário:<span class="required">(Opcional)</span></label>
+                    <input type="tel" id="phone-secondary" name="phone-secondary" >
                     
                     <div class="button-container">
                         <button type="submit">Gerar Assinatura</button>
@@ -84,6 +104,9 @@
             </div>
         </div>
     </div>
+    <footer>
+        <p>Todos os direitos reservados &copy; 2021 - Guarda Municipal de Fortaleza</p>
+    </footer>
     <script src="static/js/script.js"></script>
 </body>
 </html>

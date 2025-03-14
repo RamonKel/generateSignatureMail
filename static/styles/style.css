@@ -158,13 +158,14 @@ button:hover {
 }
 
 #download-link {
-    display: inline-block;
+    display: block;
     margin-top: 20px;
     color: #120a8f; /* Azul principal da GMF */
     text-decoration: none;
     border: 1px solid #120a8f;
     padding: 10px 20px;
     border-radius: 4px;
+    width: 100%;
 }
 
 #download-link:hover {

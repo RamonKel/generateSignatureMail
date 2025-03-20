@@ -1,15 +1,6 @@
 document.getElementById('signature-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const emailField = document.getElementById('email');
-    const emailValue = emailField.value.trim();
-    const emailPattern = /^[a-zA-Z]+\.[a-zA-Z]+@gmf\.fortaleza\.ce\.gov\.br$/;
-
-    if (!emailPattern.test(emailValue)) {
-        alert('Por favor, insira um email válido no formato nome.sobrenome@gmf.fortaleza.ce.gov.br');
-        return;
-    }
-
     const formData = new FormData(event.target);
     const response = await fetch('/generate-signature', {
         method: 'POST',

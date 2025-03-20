@@ -66,20 +66,25 @@ def generate_signature():
         elif role == 'ESTG':
             draw.text((21, 30), name_role_text, font=fontName, fill="white")
         elif role == '':
-            draw.text((21, 30), name_role_text, font=fontName, fill="white")
+            draw.text((16, 30), name_role_text, font=fontName, fill="white")
         
         draw.text((21, 97), email, font=fontMail, fill="white")
 
         assignment_text = f"{assignment} - {department}"
-        draw.text((21, 57), assignment_text, font=fontAssignment, fill="white")
+        if assignment == '':
+            draw.text((21, 57), f"{department}", font=fontAssignment, fill="white")
+        else:
+            draw.text((21, 57), assignment_text, font=fontAssignment, fill="white")
 
-        draw.text((21, 115), phone, font=fontPhone, fill="white")
         
-        secondary_phone = f"{phone} / {phone_secondary}"
-        if phone_secondary != '':
+        if phone_secondary != '' and phone != '':
+            secondary_phone = f"{phone_secondary} / {phone}"
             draw.text((21, 115), secondary_phone, font=fontPhoneSeconday, fill="white")
+        elif phone_secondary != '':
+            draw.text((21, 115), phone_secondary, font=fontPhoneSeconday, fill="white")
         else:
             draw.text((21, 115), phone, font=fontPhone, fill="white")
+
 
 
         # Salvar a imagem em um buffer de bytes

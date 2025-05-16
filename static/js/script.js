@@ -25,7 +25,7 @@ document.getElementById('signature-form').addEventListener('submit', async funct
 
 $(document).ready(function() {
     $('#phone').mask('(00) 00000-0000');
-    $('#phone-secondary').mask('0000-0000');
+    $('#phone-secondary').mask('(00) 0000-0000');
 
     $('#name').on('input', function() {
         const fullName = $(this).val().trim().split(' ');
